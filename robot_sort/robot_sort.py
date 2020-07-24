@@ -108,7 +108,14 @@ class SortingRobot:
                     self.set_light_on() # turn light on since swapped
             # at end of list holding smallest item
             # move to spot with empty space
-            
+            while self.compare_item() is not None:
+                self.move_left()
+            # swap smallest item to beginning of list
+            self.swap_item() # now holding nothin
+            # move to the new beginning
+            self.move_right()
+            # if no swaps were made during loop,
+            # the robot's light turns off
 
 
 if __name__ == "__main__":
